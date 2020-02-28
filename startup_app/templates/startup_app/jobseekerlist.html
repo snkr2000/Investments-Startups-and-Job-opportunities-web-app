@@ -1,0 +1,18 @@
+{% extends "startup_app/base.html" %}
+
+{% block title %}
+  Job Seekers
+{% endblock %}
+
+{% block content %}
+<div>
+  {% for seeker in seeker_table %}
+    <div>
+      <h2>{{ seeker.name }}</h2>
+      <p> Field of Interest: {{ seeker.desired_field }}</p>
+      <button><a href = "{% url 'seeker-detail' seeker.id %}">View Details</a></button>
+    </div>
+    <br/>
+  {% endfor %}
+</div>
+{% endblock content %}

@@ -1,0 +1,16 @@
+{% extends "startup_app/base.html" %}
+{% block title %}
+  Available jobs
+{% endblock title %}
+
+{% block content %}
+  <div>
+    {% for job in jobs %}
+      <div>
+        Required: <b>{{ job.job_type }}</b> at <b>{{ job.company.name }}</b>
+        <br/>
+        <button><a href = "{% url 'job-detail' job.id %}">View Details </a></button>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock content %}

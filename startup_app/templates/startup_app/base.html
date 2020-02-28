@@ -1,0 +1,22 @@
+{% load static %}
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      {% block title %}
+      {% endblock title %}
+    </title>
+  </head>
+  <body>
+    <ul>
+      <li><a href = "{% url 'startup-jobs' %}">Jobs</a></li>
+      <li><a href = "{% url 'startup-home' %}">Home</a></li>
+      <li><a href = "{% url 'investors' %}">Investors</a></li>
+      <li><a href = "{% url 'seekers' %}">Job Seekers</a></li>
+      <li><a href = "{% url 'startups' %}">Start-Ups</a></li>
+    </ul>
+    {% block content %}
+    {% endblock content %}
+  </body>
+</html>

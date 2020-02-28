@@ -1,0 +1,18 @@
+{% extends "startup_app/base.html" %}
+
+{% block title %}
+  {{ startup.name }}
+{% endblock title %}
+
+{% block content %}
+  <h1>
+    {{ startup.name }}
+  </h1>
+  <b>Registration Number: </b>{{ startup.regID }}<br/>
+  <h2>About: </h2>
+  <p>{{ startup.about }}</p>
+  <h5>Contact Information: </h5>
+  Website: <b>{{ startup.siteurl }}</b><br/>
+  Email: <b>{{ startup.compEmail }}</b><br/>
+  Location: <b>{{ startup.location }}</b>
+{% endblock content %}

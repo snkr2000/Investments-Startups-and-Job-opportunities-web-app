@@ -1,0 +1,19 @@
+{% extends "startup_app/base.html" %}
+
+{% block title %}
+  Investment - {{ investment.id }}
+{% endblock title %}
+
+{% block content %}
+  <b><i>{{ investment.start_up.name }}</i></b> has raised from <b><i>{{ investment.investor.name }}</i></b>
+  <br/>
+  <b> Date Invested: </b> {{ investment.day_invested }}<br/>
+  <b>Amount Invested: </b> {{ investment.amount_invested }}<br/>
+  <b>About the Start Up:</b><br/>
+  <p>{{ investment.start_up.about }}</p>
+  <b>About the Investor:</b><br/>
+  <p>{{ investment.investor.about }}</p><br/>
+  <b> Know More: </b>
+  <button><a href = "{% url 'startup-detail' investment.start_up.id %}">About Startup</a></button>
+  <button><a href = "{% url 'investor-detail' investment.investor.id %}">About Investor</a></button>
+{% endblock content %}

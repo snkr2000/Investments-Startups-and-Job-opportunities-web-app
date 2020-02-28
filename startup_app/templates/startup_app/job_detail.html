@@ -1,0 +1,20 @@
+{% extends "startup_app/base.html" %}
+
+{% block title %}
+  job - {{ job_detail.pk }}
+{% endblock title %}
+
+{% block content %}
+  <h1>{{ job_detail.company.name }}</h1>
+  <h2>About: </h2>
+  <p>{{ job_detail.company.about }}</p>
+  <h3>Required: </h3><i>{{ job_detail.job_type }}</i> at <b>{{ job_detail.location }}</b> with <b>{{ job_detail.years_of_experience }}</b> years of experience.
+  <h4>Skills Excpected: </h4>
+  <p>{{job_detail.skill_set }}</p>
+  <h5>Salary: </h5><b> {{ job_detail.salary }}</b>
+  <h6>Contact Information: </h6>
+  <div>
+    Website: {{ job_detail.company.siteurl }}<br/>
+    Contact Email: {{ job_detail.company.compEmail }}<br/>
+  </div>
+{% endblock content %}
