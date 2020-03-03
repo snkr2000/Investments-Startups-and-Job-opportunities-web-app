@@ -1,0 +1,21 @@
+{% extends "startup_app/base.html" %}
+
+{% block title %}
+ Investors
+{% endblock title %}
+
+{% block content %}
+  <div>
+    {% for investor in investor_table %}
+      <div>
+        Investor Name:
+                      <b>{{ investor.name }}</b><br/>
+        Investor's field of interest:
+                      <p>{{ investor.interested_fields }}</p>
+        Investor's location: {{ investor.place }}
+        <br/>
+        <button><a href = "{% url 'investor-detail' investor.id %}">View Details</a></button>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock content %}

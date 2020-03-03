@@ -1,0 +1,20 @@
+{% extends "startup_app/base.html" %}
+
+{% block title %}
+  Start Ups
+{% endblock title %}
+
+{% block content %}
+  <div>
+    {% for start_up in startup_table %}
+      <div>
+        <h2>{{start_up.name }}</h2>
+        <div>
+          Location: <b>{{ start_up.location }}</b>
+        </div>
+        <br/>
+        <button><a href = "{% url 'startup-detail' start_up.id %}">View Details</a></button>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock content %}

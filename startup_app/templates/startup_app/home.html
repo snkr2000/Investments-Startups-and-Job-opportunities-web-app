@@ -1,0 +1,20 @@
+{% extends "startup_app/base.html" %}
+
+{% block title %}
+  Investment Data
+{% endblock title %}
+
+{% block content %}
+    {% for idata in itable %}
+      <div>
+        <a href = "{% url 'startup-detail' idata.start_up.id %}">{{ idata.start_up.name }}</a> raises <b>{{ idata.amount }}</b> from <a href = "{% url 'investor-detail' idata.investor.id %}">{{ idata.investor.name }}</a>
+        <br/>
+        <br/>
+        <button><a href = "{% url 'investment-detail' idata.id %}">View Details</a></button>
+      </div>
+      <br/>
+      <br/>
+      <br/>
+    {% endfor %}
+    <br/>
+{% endblock content %}

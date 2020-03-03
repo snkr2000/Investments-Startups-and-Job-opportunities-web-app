@@ -1,0 +1,20 @@
+{% extends "startup_app/base.html" %}
+
+{% block title %}
+  {{ seeker.name }}
+{% endblock title %}
+
+{% block content %}
+  <h1>{{ seeker.name }}</h1>
+  <h2>Contact Information: </h2>
+  <p>
+    Email: <b>{{ seeker.email }}</b><br/>
+    Location: <b>{{ seeker.location }}</b>
+  </p>
+  <h2>Desired Field: </h2>
+  <b><i>{{ seeker.desired_field }}</i></b>
+  <h2>Skill Set: </h2>
+  <p> {{ seeker.skill_set }} </p>
+  <h2>Experience: </h2>
+  <p> {{ seeker.years_of_experience }}</p>
+{% endblock content %}

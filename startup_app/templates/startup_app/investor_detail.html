@@ -1,0 +1,20 @@
+{% extends "startup_app/base.html" %}
+
+{% block title %}
+  {{ investor.name }}
+{% endblock title %}
+
+{% block content %}
+  <h1>
+    {{ investor.name }}
+  </h1>
+  <h2>About: </h2>
+  <p>{{ investor.about }}</p>
+  <h3>Fields of Interest: </h3>
+  <p> {{ investor.interested_fields }}</p>
+  <h4>Maximum amount ready to invest: </h4><b> {{ investor.amount_to_invest }}</b>
+  <h5>Contact Information: </h5>
+  Website: <b>{{ investor.website }}</b><br/>
+  Email: <b>{{ investor.email }}</b><br/>
+  Location: <b>{{ investor.location }}</b>
+{% endblock content %}
